@@ -1,0 +1,6 @@
+Place start_telnetd /etc/init.d
+Make sure it is rwxr-xr-x
+
+
+in /etc/init.d/{rc2.d,rc3.d,rc4.d,rc5.d} execute:
+	ln -s ../init.d/start_telnetd S99start_telnet

@@ -1,0 +1,29 @@
+#! /bin/sh
+#
+#Copyright (c) 2011-2013 Qualcomm Technologies, Inc.  All Rights Reserved.
+#Qualcomm Technologies Proprietary and Confidential.
+
+# telnetd   init.d script to start the telnetd daemon
+set -e
+
+case "$1" in
+  start)
+        echo -n  "Starting telnetd: "
+	/sbin/telnetd
+        echo "done"
+        ;;
+  stop)
+        echo -n "Stopping telnetd: (ignored)"
+        echo "done"
+        ;;
+  restart)
+        $0 stop
+        $0 start
+        ;;
+  *)
+        echo "Usage telnetd { start | stop | restart}" >&2
+        exit 1
+        ;;
+esac
+
+exit 0
